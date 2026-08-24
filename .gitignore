@@ -1,0 +1,125 @@
+### Python ###
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+### Virtuelle Umgebung ###
+venv/
+env/
+ENV/
+.venv/
+.env/
+virtualenv/
+pyvenv.cfg
+
+### Django ###
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static_root/
+/static/
+
+# Django Migrationen (nur aktivieren, falls Migrationen bewusst
+# nicht versioniert werden sollen — in den meisten Projekten sollten
+# Migrationen eingecheckt werden, daher standardmäßig auskommentiert)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Django Secret Key / Umgebungsvariablen
+.env
+.env.local
+.env.*.local
+*.env
+
+### Testing & Coverage ###
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+### Type Checker / Linter ###
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+### Jupyter Notebook ###
+.ipynb_checkpoints
+
+### IDEs & Editoren ###
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+### Betriebssystem ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+### Datenbanken (falls lokal genutzt) ###
+*.sqlite3
+*.sqlite3-journal
+*.db
+
+### Sonstiges ###
+*.bak
+*.tmp
+*.orig
+node_modules/
+.sass-cache/
+*.pid
+*.seed
+*.pid.lock
+
+# Docker (falls vorhanden)
+*.env.docker
+
+# Backup-Dateien von Editoren
+*.rej
