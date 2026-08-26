@@ -1,52 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-</head>
-<body>
-    <div class="container">
-        <h1>Home Library</h1>
-        <ul class="nav bg-info">
-            <li class="nav-item">
-              <a class="nav-link link-light" href="/">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link-light" href="/members">MEMBERS</a>
-            </li>
-        </ul>
-    </div>
-    <div class="container">
-        <ul>
-            {% for book in books %}
-                <li>{{ book.title }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="container">
-        <h2>Buch per ISBN suchen</h2>
-        <form method="post" action="{% url 'search_book_by_isbn' %}" class="row g-2">
-            {% csrf_token %}
-            <div class="col-auto">
-                <input
-                    type="text"
-                    name="isbn"
-                    class="form-control"
-                    placeholder="z.B. 9780134685991"
-                    required
-                >
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-info">Suchen</button>
-            </div>
-        </form>
+{% extends 'base.html' %}
 
-        {% if data %}
-            <pre class="mt-3">{{ data }}</pre>
-        {% endif %}
-    </div>
-</body>
-</html>
+{% block title %}Home - Home Library{% endblock %}
+
+{% block content %}
+    {% for book in books %}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ book.cover_url }}" class="img-fluid rounded-start" alt="{{ book.title }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book.title }}</h5>
+                        <p class="card-text">{{ book.publish_date }}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted">{{ book.isbn }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%endfor%}
+{% endblock %}

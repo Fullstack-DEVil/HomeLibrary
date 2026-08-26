@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Search - Home Library{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Buch per ISBN suchen</h2>
+        <form method="post" action="{% url 'search_book_by_isbn' %}" class="row g-2">
+            {% csrf_token %}
+            <div class="col-auto">
+                <input
+                    type="text"
+                    name="isbn"
+                    class="form-control"
+                    placeholder="z.B. 9780134685991"
+                    required
+                >
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-info">Suchen</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ cover }}" class="img-fluid rounded-start" alt="{{ title }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ title }}</h5>
+                        <p class="card-text">{{ publish_date }}</p>
+                        <p class="card-text"><small class="text-muted">{{ isbn }}</small></p>
+                        <form method="post" action="{% url 'save_book' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="title" value="{{ title }}">
+                            <input type="hidden" name="isbn" value="{{ isbn }}">
+                            <input type="hidden" name="publish_date" value="{{ publish_date }}">
+                            <input type="hidden" name="cover_url" value="{{ cover }}">
+                            <button type="submit" class="btn btn-success">Buch speichern</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
