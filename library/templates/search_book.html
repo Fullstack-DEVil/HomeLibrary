@@ -32,11 +32,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ title }}</h5>
                         <p class="card-text">{{ publish_date }}</p>
-                        <p class="card-text"><small class="text-muted">{{ isbn }}</small></p>
+                        <p class="card-text"><small class="text-muted">{{ isbn_13 }}</small></p>
                         <form method="post" action="{% url 'save_book' %}">
                             {% csrf_token %}
                             <input type="hidden" name="title" value="{{ title }}">
-                            <input type="hidden" name="isbn" value="{{ isbn }}">
+                            <input type="hidden" name="isbn_10" value="{{ isbn_10 }}">
+                            <input type="hidden" name="isbn_13" value="{{ isbn_13 }}">
+                            <textarea name="description" hidden>{{ description }}</textarea>
                             <input type="hidden" name="publish_date" value="{{ publish_date }}">
                             <input type="hidden" name="cover_url" value="{{ cover }}">
                             <button type="submit" class="btn btn-success">Buch speichern</button>
