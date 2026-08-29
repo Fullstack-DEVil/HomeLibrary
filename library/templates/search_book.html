@@ -3,7 +3,7 @@
 {% block title %}Search - Home Library{% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container mt-4">
         <h2>Buch per ISBN suchen</h2>
         <form method="post" action="{% url 'search_book_by_isbn' %}" class="row g-2">
             {% csrf_token %}
@@ -17,7 +17,7 @@
                 >
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-info">Suchen</button>
+                <button type="submit" class="btn btn-info">SEARCH</button>
             </div>
         </form>
     </div>
@@ -41,7 +41,7 @@
                             <textarea name="description" hidden>{{ description }}</textarea>
                             <input type="hidden" name="publish_date" value="{{ publish_date }}">
                             <input type="hidden" name="cover_url" value="{{ cover }}">
-                            <button type="submit" class="btn btn-success">Buch speichern</button>
+                            <button type="submit" class="btn btn-success">Add to Library</button>
                         </form>
                     </div>
                 </div>

@@ -4,16 +4,16 @@
 
 {% block content %}
     {% for book in books %}
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 mt-4" style="max-width: 100%;">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="{{ book.cover_url }}" class="img-fluid rounded-start" alt="{{ book.title }}">
+                <div class="col-4 col-md-2">
+                    <img src="{{ book.cover_url }}" class="book-cover rounded-start" alt="{{ book.title }}">
                 </div>
-                <div class="col-md-8">
+                <div class="col-8 col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">{{ book.title }}</h5>
                         <p class="card-text">{{ book.publish_date }}</p>
-                        <p class="card-text">{{ book.description }}</p>
+                        <p class="card-text book-description">{{ book.description }}</p>
                         <p class="card-text"><small class="text-muted">{{ book.isbn_13 }}</small></p>
                     </div>
                 </div>

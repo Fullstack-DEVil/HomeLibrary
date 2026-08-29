@@ -1,0 +1,94 @@
+/* library/static/library/css/custom.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap');
+
+.navbar-shelly {
+    background-color: #1b3a2b;
+    padding: 0.75rem 1.5rem;
+}
+
+.navbar-shelly .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-shelly .logo-img {
+    width: 88px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 0.75rem;
+}
+
+.navbar-shelly .brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 2.75rem;
+    letter-spacing: 0.03em;
+    color: #f4f1ea;
+}
+
+.navbar-shelly .navbar-nav {
+    gap: 2.5rem;
+}
+
+.navbar-shelly .nav-link {
+    color: #d8ddd6;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.navbar-shelly .nav-link:hover {
+    color: #7fb69e;
+}
+
+.navbar-shelly .navbar-toggler {
+    border-color: rgba(244, 241, 234, 0.5);
+}
+
+.navbar-shelly .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(244, 241, 234, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991.98px) {
+    .navbar-shelly .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-shelly .navbar-nav {
+        margin-left: 0 !important;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 767.98px) {
+    .card-text.book-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.85rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
